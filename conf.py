@@ -51,7 +51,7 @@ source_parsers = {
 master_doc = 'index'
 
 # General information about the project.
-project = 'La Programmation Orientée Objet en Python'
+project = u'La Programmation Orientée Objet en Python'
 copyright = '2016, nohar entwanne Smokiev'
 author = 'nohar, entwanne, Smokiev'
 

@@ -45,7 +45,7 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = ['.rst', '.md']
 
-source_pasers = {
+source_parsers = {
     '.md': CommonMarkParser,
 }
 
@@ -57,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'La Programmation Orientée Objet en Python'
-#copyright = '2016, nohar entwanne Smokiev'
+copyright = '2016, nohar entwanne Smokiev'
 author = 'nohar, entwanne, Smokiev'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -89,7 +89,7 @@ exclude_patterns = ['_build',
                     'Thumbs.db',
                     '.DS_Store',
                     'venv',
-                    'README.md'
+                    'README.md',
                     'LICENCE.md']
 
 # The reST default role (used for this markup: `text`) to use for all

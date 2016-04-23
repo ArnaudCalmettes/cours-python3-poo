@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # La Programmation Orientée Objet en Python documentation build configuration file, created by

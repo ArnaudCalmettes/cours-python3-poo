@@ -54,8 +54,8 @@ changer ces informations, nous le pouvons aussi :
 ```python
 print("J'ai {} ans.".format(age(personne1)))
 #Affiche : 'J'ai 55 ans.'
-print("Ah non, j'ai {} depuis hier en fait... Euh...".format(age(personne1, 56)))
-#Affiche : 'Ah non, j'ai 56 depuis hier... Euh...'
+print("Ah non, j'ai {} ans depuis hier en fait... Euh...".format(age(personne1, 56)))
+#Affiche : 'Ah non, j'ai 56 ans depuis hier en fait... Euh...'
 ```
 
 Si vous relisez notre définition d'objet, vous vous rendrez compte que nous venons d'en manipuler, du moins en quelque sorte.

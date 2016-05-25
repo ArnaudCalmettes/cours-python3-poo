@@ -1,11 +1,12 @@
 Objet
 =====
 
-Tout d'abord, qu'est-ce qu'un objet ? En introduction, nous avons dit qu'un objet avait des propriétés
+Tout d'abord, qu'est-ce qu'un objet ?
+En introduction, nous avons dit qu'un objet avait des propriétés
 et pouvait être manipulé avec des opérations, c'est bien beau tout ça mais qu'est-ce que ça peut
-bien vouloir dire concrétement ?
+bien vouloir dire concrétement ?
 
-Pour vous éclairer, prenons le code suivant :
+Pour vous éclairer, prenons le code suivant :
 
 ```python
 def mk_personne(nom, prenom, age):
@@ -34,7 +35,7 @@ def saluer(personne):
     print("Hello, {} {} !".format(prenom(personne), nom(personne))
 ```
 
-Maintenant, définissons deux personnes avec leur nom, leur prénom et leur âge :
+Maintenant, définissons deux personnes avec leur nom, leur prénom et leur âge :
 
 ```python
 personne1 = mk_personne("Poirot", "Hercule", 55)
@@ -49,7 +50,7 @@ saluer(personne2) #Affiche : 'Hello, Sherlock Holmes !'
 ```
 
 Si nous souhaitons en savoir un peu plus sur eux (leur prénom, leur nom et leur âge) ou même
-changer ces informations, nous le pouvons aussi :
+changer ces informations, nous le pouvons aussi :
 
 ```python
 print("J'ai {} ans.".format(age(personne1)))
@@ -59,9 +60,9 @@ print("Ah non, j'ai {} ans depuis hier en fait... Euh...".format(age(personne1, 
 ```
 
 Si vous relisez notre définition d'objet, vous vous rendrez compte que nous venons d'en manipuler, du moins en quelque sorte.
-En effet, nous avons défini (ou *instancié*) des personnes en donnant des valeurs à leurs propriétés (ou *attributs*) : nom, prénom et âge.
-Ces derniers étaient stockés dans un dictionnaire avec des couples 'nom de l'attribut : valeur'.
+En effet, nous avons défini (ou *instancié*) des personnes en donnant des valeurs à leurs propriétés (ou *attributs*) : nom, prénom et âge.
+Ces derniers étaient stockés dans un dictionnaire avec des couples `(nom de l'attribut, valeur)`.
 Ensuite, nous avons interagi avec ces personnes, notamment en utilisant la fonction (ou *méthode*) 'saluer'.
 
-Nos personnes étaient donc comme des objets. En réalité, beaucoup de choses peuvent se modéliser par un objet et
+Nos personnes se comportaient donc comme des objets. En réalité, beaucoup de choses peuvent se modéliser par un objet et
 en Python, tout est objet, mais nous en reparlerons plus tard. Pour le moment, intéressons nous à ce qui définit un objet.

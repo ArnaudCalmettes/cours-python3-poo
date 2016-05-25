@@ -1,15 +1,6 @@
 Classes
 =======
 
-```python
-class Personne:
-    def __init__(nom, prenom, age):
-        self.nom = nom
-        self.prenom = prenom
-        self.age = age
+Une classe est en fait la définition des types. `int`, `str` ou encore `list` sont des exemples de classes.
 
-    def saluer():
-        print("Hello, {} {}!".format(self.prenom, self.nom)
-```
-
-+ Les classes définissent un type, la structure des objets de ce type
+Une classe décrit la structure des objets du type qu'elle définit : quelles méthodes vont être applicables sur ces objets.

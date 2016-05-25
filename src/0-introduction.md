@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Souvent utilisé de façon procédurale, Python peut aussi servir de manière orientée objet. 
+Souvent utilisé de façon procédurale, Python peut aussi servir de manière orientée objet.
 
 Ce langage moderne et puissant est né au début des années 1990 sous l'impulsion de Guido van Rossum.
 
@@ -13,5 +13,5 @@ En définitive, un objet est une donnée.
 
 À travers ce tutoriel, nous allons nous intéresser à cette façon de penser et de programmer avec le langage Python.
 
-Il vous est conseillé de maîtriser les bases de ce dernier (manipulation de valeurs, 
+Il vous est conseillé de maîtriser les bases de ce dernier (manipulation de valeurs,
 structures de contrôle, structures de données, fonctions) avant de continuer votre lecture.

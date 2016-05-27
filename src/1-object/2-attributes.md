@@ -29,3 +29,13 @@ J'ai 5 places.
 
 Nous avons créé un objet nommé `voiture`, de type `Object`, auquel nous avons attribué une couleur ainsi qu'un nombre de places.
 Puis nous avons affiché ces valeurs. Vous remarquerez que bien qu'une voiture soit un objet, il aurait été plus précis que son type soit 'Voiture'.
+
+Un attribut peut aussi être supprimé à l'aide de l'opérateur `del`.
+
+```python
+>>> del voiture.couleur
+>>> voiture.couleur
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Object' object has no attribute 'couleur'
+```

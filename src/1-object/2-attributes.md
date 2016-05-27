@@ -3,7 +3,7 @@
 Ensuite, un objet est constitué d’attributs. Ces derniers représentent des valeurs propres à l’objet. Si nous reprenons notre code,
 une personne a un nom, un prénom et un âge. Nous pouvons en général accéder et modifier facilement ces valeurs.
 
-En Python, nous pouvons facilement associer des valeurs à nos objets :
+En Python, nous pouvons facilement associer des valeurs à nos objets.
 
 ```python
 #Ne pas se soucier de cela pour le moment

@@ -14,3 +14,5 @@ En définitive, un objet est une donnée. Une donnée constituée de diverses pr
 
 Il vous est conseillé de maîtriser les bases de ce dernier (manipulation de valeurs,
 structures de contrôle, structures de données, fonctions) avant de continuer votre lecture.
+
+Nous travaillerons ici avec la version 3 de Python (version ≥ 3.4 conseillée).

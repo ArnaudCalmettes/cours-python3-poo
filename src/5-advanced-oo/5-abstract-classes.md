@@ -3,9 +3,9 @@
 La notion de classes abstraites est utilisée lors de l'héritage pour forcer les classes filles à implémenter certaines méthodes (dites méthodes abstraites) et donc respecter une interface.
 
 Les classes abstraites ne font pas partie du cœur même de Python, mais sont disponibles via un module de la bibliothèque standard, `abc`.
-Ce module contient notamment la classe `ABC` et les décorateurs `abstractmethod`, `abstractclassmethod`, `abstractstaticmethod` et `abstractproperty`, pour définir respectivement une méthode abstraite, une méthode de classe abstraite, une méthode statique abstraite, et une propriété abstraite.
+Ce module contient notamment la classe `ABC` et le décorateur `abstractmethod`, pour définir respectivement une classe abstraite et une méthode abstraite de cette classe.
 
-Une classe abstraite doit donc hériter d'`ABC` (*Abstract Base Class*), et utiliser les décorateurs cités pour définir ses méthodes abstraites.
+Une classe abstraite doit donc hériter d'`ABC` (*Abstract Base Class*), et utiliser le décorateur cité pour définir ses méthodes abstraites.
 
 ```python
 import abc

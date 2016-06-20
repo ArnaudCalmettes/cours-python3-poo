@@ -1,6 +1,7 @@
 Opérateurs
 ==========
 
-Nous savons créer une classe et y définir de nouvelles méthodes, mais nous ne savons pas jusqu'ici comment interagir avec les opérateurs du langage Python.
+Il est maintenant temps de nous intéresser aux opérateurs du langage Python (`+`, `-`, `*`, etc.).
+En effet, un code respectant la philosophie se doit de les utiliser à bon escient.
 
-Ce chapitre a pour but de vous présenter les mécanismes mis en jeu par les différents opérateurs, et la manière de les implémenter.
+Ce chapitre a pour but de vous présenter les mécanismes mis en jeu par ces différents opérateurs, et la manière de les implémenter.

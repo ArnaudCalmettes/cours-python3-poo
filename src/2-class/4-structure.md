@@ -17,4 +17,4 @@ f = FakeFile()
 print('foo', file=f)
 ```
 
-Python est construit autour de cette idée, appelée *duck-typing*.
+Python est entièrement construit autour de cette idée, appelée *duck-typing*.

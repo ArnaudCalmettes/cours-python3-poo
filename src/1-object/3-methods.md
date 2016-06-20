@@ -1,10 +1,10 @@
 ## Méthodes
 
-Enfin, les méthodes sont les opérations applicables sur les objets. Ce sont en fait des fonctions paramétrées avec un objet et qui peuvent
-prendre d'autres paramètres. Si nous prenons l'exemple de notre fonction 'saluer', celle-ci prend bien un objet en paramètre.
+Enfin, les méthodes sont les opérations applicables sur les objets.
+Ce sont en fait des fonctions paramétrées avec un objet et qui peuvent recevoir d'autres paramètres.
 
-De plus, les méthodes peuvent lire et modifier les attributs de l'objet suivant les cas, comme nous avons pu le faire avec la fonction 'age'.
+Nos objets `User` ne contiennent pas encore de méthode, nous découvrirons comment en ajouter dans le chapitre suivant.
+Mais nous pouvons déjà imaginer une méthode `check_pwd` (*check password*) pour vérifier qu'un mot de passe entré correspond bien au mot de passe de notre utilisateur.
 
-
-À travers cette partie nous avons exploré et défini la notion d'objet. Un objet étant le fruit d'une classe, il est temps de
-nous intéresser à cette dernière et à sa construction.
+Les méthodes recevant l'objet en paramètre, elles peuvent en lire et modifier les attributs.
+Souvenez-vous par exemple de la méthode `append` des listes, qui permet d'insérer un nouvel élément, elle modifie bien la liste en question.

@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Souvent utilisé de façon procédurale, Python peut aussi servir de manière orientée objet.
+Plus qu'un simple langage de script, Python est aussi un langage orienté objet.
 
 Ce langage moderne et puissant est né au début des années 1990 sous l'impulsion de Guido van Rossum.
 

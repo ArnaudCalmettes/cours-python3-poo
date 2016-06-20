@@ -6,30 +6,30 @@ Ils permettent de générer des attributs à la volée à partir de méthodes de
 Un exemple valant mieux qu'un long discours :
 
 ```python
-class Person:
-    def __init__(self, last_name, first_name):
-        self.last_name, self.first_name = last_name, first_name
-
+class ProfilePicture:
     @property
-    def long_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+    def picture(self):
+        return '{}-{}.png'.format(self.id, self.name)
+
+class UserPicture(ProfilePicture, User):
+    pass
 ```
 
-On définit donc une propriété `long_name`, qui s'utilise comme un attribut. Chaque fois qu'on appelle `long_name`, la méthode correspondante est appelée et le résultat est calculé.
+On définit donc une propriété `picture`, qui s'utilise comme un attribut. Chaque fois qu'on appelle `picture`, la méthode correspondante est appelée et le résultat est calculé.
 
 ```python
->>> p = Person('Doe', 'John')
->>> p.long_name
-'John Doe'
->>> p.first_name = 'Roger'
->>> p.long_name
-'Roger Doe'
+>>> john = UserPicture('john', '12345')
+>>> john.picture
+'1-john.png'
+>>> john.name = 'John'
+>>> john.picture
+'1-John.png'
 ```
 
-Il s'agit là d'une propriété en lecture seule, il nous est en effet impossible de modifier la valeur de l'attribut `long_name`.
+Il s'agit là d'une propriété en lecture seule, il nous est en effet impossible de modifier la valeur de l'attribut `picture`.
 
 ```python
->>> p.long_name = 'Jacques Brel'
+>>> john.picture = 'toto.png'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: can't set attribute
@@ -37,48 +37,71 @@ AttributeError: can't set attribute
 
 Pour le rendre modifiable, il faut ajouter à notre classe la méthode permettant de gérer la modification.
 
+On utilisera ici un attribut `_picture`, qui pourra contenir l'adresse de l'image si elle a été définie, et `None` le cas échéant.
+
 ```python
-class Person:
-    def __init__(self, last_name, first_name):
-        self.last_name, self.first_name = last_name, first_name
+class ProfilePicture:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._picture = None
 
     @property
-    def long_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+    def picture(self):
+        if self._picture is not None:
+            return self._picture
+        return '{}-{}.png'.format(self.id, self.name)
 
-    @long_name.setter
-    def long_name(self, value):
-        self.first_name, self.last_name = value.split()
+    @picture.setter
+    def picture(self, value):
+        self._picture = value
+
+class UserPicture(ProfilePicture, User):
+    pass
 ```
 
 ```python
->>> p = Person('Doe', 'John')
->>> p.long_name = 'Jacques Brel'
->>> p.long_name
-'Jacques Brel'
->>> p.first_name
-'Jacques'
->>> p.last_name
-'Brel'
+>>> john = UserPicture('john', '12345')
+>>> john.picture
+'1-john.png'
+>>> john.picture = 'toto.png'
+>>> john.picture
+'toto.png'
 ```
 
-Enfin, on peut aussi coder la suppression de l'attribut à l'aide de `@long_name.deleter`
+Enfin, on peut aussi coder la suppression de l'attribut à l'aide de `@long_name.deleter`, ce qui revient à réaffecter `None` à l'attribut `_picture`.
 
 ```python
-class Person:
-    def __init__(self, last_name, first_name):
-        self.last_name, self.first_name = last_name, first_name
+class ProfilePicture:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._picture = None
 
     @property
-    def long_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+    def picture(self):
+        if self._picture is not None:
+            return self._picture
+        return '{}-{}.png'.format(self.id, self.name)
 
-    @long_name.setter
-    def long_name(self, value):
-        self.first_name, self.last_name = value.split()
+    @picture.setter
+    def picture(self, value):
+        self._picture = value
 
-    @long_name.deleter
-    def long_name(self):
-        del self.first_name
-        del self.last_name
+    @picture.deleter
+    def picture(self):
+        self._picture = None
+
+class UserPicture(ProfilePicture, User):
+    pass
+```
+
+```python
+>>> john = UserPicture('john', '12345')
+>>> john.picture
+'1-john.png'
+>>> john.picture = 'toto.png'
+>>> john.picture
+'toto.png'
+>>> del john.picture
+>>> john.picture
+'1-john.png'
 ```

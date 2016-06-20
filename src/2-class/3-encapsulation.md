@@ -1,10 +1,10 @@
 ## Encapsulation
 
 Au sein d'un objet, les attributs peuvent avoir des sémantiques différentes.
-Certains attributs vont représenter des propriétés de l'objet et faire partie de son interface (tels que le prénom et le nom de nos objets `Personne`). Ils pourront alors être lus et modifiés depuis l'extérieur de l'objet, on parle dans ce cas d'attributs publics.
+Certains attributs vont représenter des propriétés de l'objet et faire partie de son interface (tels que le prénom et le nom de nos objets `Person`). Ils pourront alors être lus et modifiés depuis l'extérieur de l'objet, on parle dans ce cas d'attributs publics.
 
 D'autres vont contenir des données internes à l'objet, n'ayant pas vocation à être accessibles depuis l'extérieur, les attributs privés.
-Par exemple, notre classe `Personne` pourrait générer un identifiant unique à la création d'une personne, cet identifiant ne devrait jamais être utilisé en dehors de l'objet.
+Par exemple, le mot de passe de notre classe `User` ne devrait jamais être utilisé en dehors de l'objet. Nous en profiterons aussi pour sécuriser le stockge de nos mots de passe en ajoutant une méthode servant à le hasher.
 
 De la même manière que pour les attributs, certaines méthodes vont avoir une portée publique et d'autres privée (on peut imaginer une méthode interne de la classe pour générer notre identifiant unique).
 On nomme encapsulation cette notion de visibilité des attributs et méthodes d'un objet.
@@ -14,46 +14,60 @@ Il existe à la place des conventions, qui indiquent aux développeurs quels att
 Quand vous voyez un nom d'attribut ou méthode débuter par un `_` au sein d'un objet, il indique quelque chose d'interne à l'objet (privé).
 
 ```python
-import uuid
+import crypt
 
-class Personne:
-    def __init__(self, nom, prenom, age):
-        self.nom = nom
-        self.prenom = prenom
-        self.age = age
-        self._id = self._generate_id()
+class User:
+    def __init__(self, id, name, password):
+        self.id = id
+        self.name = name
+        self._salt = crypt.mksalt() # sel utilisé pour le hash du mot de passe
+        self._password = self._crypt_pwd(password)
 
-    def _generate_id(self):
-        return str(uuid.uuid4())
+    def _crypt_pwd(self, password):
+        return crypt.crypt(password, self._salt)
+
+    def check_pwd(self, password):
+        return self._password == self._crypt_pwd(password)
 ```
 
-On note toutefois qu'il ne s'agit que d'une convention, l'attribut `_id` étant parfaitement visible depuis l'extérieur.
+```python
+>>> john = User(1, 'john', '12345')
+>>> john.check_pwd('12345')
+True
+```
+
+On note toutefois qu'il ne s'agit que d'une convention, l'attribut `_password` étant parfaitement visible depuis l'extérieur.
 
 ```python
->>> p = Personne('Doe', 'John', 34)
->>> p._id
-'81e0c460-f628-438f-9499-448a31eec3c3'
+>>> john._password
+'$6$DwdvE5H8sT71Huf/$9a.H/VIK4fdwIFdLJYL34yml/QC3KZ7'
 ```
 
 Il reste possible de masquer un peu plus l'attribut à l'aide du préfixe `__`. Ce préfixe a pour effet de renommer l'attribut en y insérant le nom de la classe courante.
 
 ```python
-class Personne:
-    def __init__(self, nom, prenom, age):
-        self.nom = nom
-        self.prenom = prenom
-        self.age = age
-        self.__id = str(uuid.uuid4())
+class User:
+    def __init__(self, id, name, password):
+        self.id = id
+        self.name = name
+        self.__salt = crypt.mksalt()
+        self.__password = self.__crypt_pwd(password)
+
+    def __crypt_pwd(self, password):
+        return crypt.crypt(password, self.__salt)
+
+    def check_pwd(self, password):
+        return self.__password == self.__crypt_pwd(password)
 ```
 
 ```python
->>> p = Personne('Doe', 'John', 34)
->>> p.__id
+>>> john = User(1, 'john', '12345')
+>>> john.__password
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: 'Personne' object has no attribute '__id'
->>> p._Personne__id
-'d728fef5-830d-4c38-8b7f-4a2622fc83a1'
+AttributeError: 'User' object has no attribute '__password'
+>>> john._User__password
+'$6$kjwoqPPHRQAamRHT$591frrNfNNb3.RdLXYiB/bgdCC4Z0p.B'
 ```
 
 Ce comportement pourra surtout être utile pour éviter des conflits de noms entre attributs internes de plusieurs classes sur un même objet, que nous verrons lors de l'héritage.

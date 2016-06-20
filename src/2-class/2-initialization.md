@@ -9,20 +9,22 @@ Quand on appelle une classe, un nouvel objet de ce type est construit en mémoir
 L'objet est initialisé à l'aide d'une méthode spéciale de sa classe, la méthode `__init__`. Cette dernière recevra les arguments passés lors de l'instanciation.
 
 ```python
-class Personne:
-    def __init__(self, nom, prenom, age):
-        self.nom = nom
-        self.prenom = prenom
-        self.age = age
+class User:
+    def __init__(self, id, name, password):
+        self.id = id
+        self.name = name
+        self.password = password
 
-    def saluer(self):
-        print("Hello, {} {}!".format(self.prenom, self.nom))
+    def check_pwd(self, password):
+        return self.password == password
 ```
 
-Nous retrouvons ici le paramètre `self`, qui peut donc aussi être utiliser pour modifier les attributs de l'objet.
+Nous retrouvons dans cette méthode le paramètre `self`, qui est donc utilisé pour modifier les attributs de l'objet.
 
 ```python
->>> p = Personne('Doe', 'John', 34)
->>> p.saluer()
-Hello, John Doe!
+>>> john = User(1, 'john', '12345')
+>>> john.check_pwd('toto')
+False
+>>> john.check_pwd('12345')
+True
 ```

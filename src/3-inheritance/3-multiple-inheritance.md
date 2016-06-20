@@ -126,10 +126,10 @@ class Reversable:
     def reverse(self):
         return self[::-1]
 
-class ReversableStr(str, Reversable):
+class ReversableStr(Reversable, str):
     pass
 
-class ReversableTuple(tuple, Reversable):
+class ReversableTuple(Reversable, tuple):
     pass
 ```
 
@@ -141,4 +141,28 @@ class ReversableTuple(tuple, Reversable):
 'cba'
 >>> ReversableTuple((1, 2, 3)).reverse()
 (3, 2, 1)
+```
+
+Ou encore nous pourrions vouloir ajouter la gestion d'une photo de profil à nos classes `User` et dérivées.
+
+```python
+class ProfilePicture:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.picture = '{}-{}.png'.format(self.id, self.name)
+
+class UserPicture(ProfilePicture, User):
+    pass
+
+class AdminPicture(ProfilePicture, Admin):
+    pass
+
+class GuestPicture(ProfilePicture, Guest):
+    pass
+```
+
+```python
+>>> john = UserPicture(1, 'john', '12345')
+>>> john.picture
+'1-john.png'
 ```

@@ -1,41 +1,48 @@
 ## Attributs
 
-Ensuite, un objet est constitué d'attributs. Ces derniers représentent des valeurs propres à l'objet. Si nous reprenons notre code,
-une personne a un nom, un prénom et un âge. Nous pouvons en général accéder et modifier facilement ces valeurs.
+Ensuite, nous avons dit qu'un objet était constitué d'attributs.
+Ces derniers représentent des valeurs propres à l'objet.
+
+Nos objets de type `User` pourraient par exemple contenir un identifiant (`id`), un nom (`name`) et un mot de passe (`password`).
 
 En Python, nous pouvons facilement associer des valeurs à nos objets :
 
 ```python
-#Ne pas se soucier de cela pour le moment
-class Object(object):
+class User:
     pass
 
-#Instanciation d'un objet de type Object
-voiture = Object()
-#Définition d'attributs pour cet objet
-voiture.couleur = "rouge"
-voiture.nombre_places = 5
-#Présentation de l'objet
-print("Je suis une voiture {}.".format(voiture.couleur))
-print("J'ai {} places.".format(voiture.nombre_places))
+# Instanciation d'un objet de type User
+john = User()
+
+# Définition d'attributs pour cet objet
+john.id = 1
+john.name = 'john'
+john.password = '12345'
+
+print('Bonjour, je suis {}.'.format(john.name))
+print('Mon id est le {}.'.format(john.id))
+print('Mon mot de passe est {}.'.format(john.password))
 ```
 
 Le code ci-dessus affiche :
 
 ```text
-Je suis une voiture rouge.
-J'ai 5 places.
+Bonjour, je suis john.
+Mon id est le 1.
+Mon mot de passe est 12345.
 ```
 
-Nous avons créé un objet nommé `voiture`, de type `Object`, auquel nous avons attribué une couleur ainsi qu'un nombre de places.
-Puis nous avons affiché ces valeurs. Vous remarquerez que bien qu'une voiture soit un objet, il aurait été plus précis que son type soit 'Voiture'.
+Nous avons instancié un objet nommé `john`, de type `User`, auquel nous avons attribué deux attributs. Puis nous avons affiché les valeurs de ces attributs.
 
-Un attribut peut aussi être supprimé à l'aide de l'opérateur `del`.
+Notez que l'on peut redéfinir la valeur d'un attribut, et qu'un attribut peut aussi être supprimé à l'aide de l'opérateur `del`.
 
 ```python
->>> del voiture.couleur
->>> voiture.couleur
+>>> john.password = 'mot de passe plus sécurisé !'
+>>> john.password
+'mot de passe plus sécurisé !'
+>>> del john.password
+>>> john.password
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: 'Object' object has no attribute 'couleur'
+AttributeError: 'User' object has no attribute 'password'
 ```

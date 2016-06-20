@@ -4,68 +4,65 @@ L'héritage simple est le mécanisme permettant d'étendre une unique classe.
 Il consiste à créer une nouvelle classe (fille) qui bénéficiera des mêmes méthodes et attributs que sa classe mère.
 Il sera aisé d'en définir de nouveaux dans la classe fille, et cela n'altèrera pas le fonctionnement de la mère.
 
-Reprenons notre classe `Personne`, à laquelle nous souhaiterions ajouter une méthode pour dire « au-revoir » à nos personnages.
+Par exemple, nous voudrions étendre notre classe `User` pour ajouter la possibilité d'avoir des administrateurs.
+Les administrateurs (`Admin`) possèderaient une nouvelle méthode, `manage`, pour administrer le système.
 
 ```python
-class ByePersonne(Personne):
-    def bye(self):
-        print("Bye {} {}".format(self.prenom, self.nom))
+class Admin(User):
+    def manage(self):
+        print('I am an über administrator!')
 ```
 
 ```python
->>> p1 = ByePersonne('Fitzerald', 'Roger', 18)
->>> p1.saluer()
-Hello, Roger Fitzerald!
->>> p1.bye()
-Bye Roger Fitzerald
->>> p2 = Personne('Doe', 'John', 38)
->>> p2.saluer()
-Hello, John Doe!
->>> p2.bye()
+>>> root = Admin(1, 'root', 'toor')
+>>> root.check_password('toor')
+True
+>>> root.manage()
+I am an über administrator!
+>>> john = User(2, 'john', '12345')
+>>> john.manage()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: 'Personne' object has no attribute 'bye'
+AttributeError: 'User' object has no attribute 'manage'
 ```
 
 Nous pouvons avoir deux classes différentes héritant d'une même mère
 
 ```python
-class MajorityPersonne(Personne):
-    def major(self):
-        return self.age >= 18
+class Guest(User):
+    pass
 ```
 
-`ByePersonne` et `MajorityPersonne` sont alors deux classes filles de `Personne`.
+`Admin` et `Guest` sont alors deux classes filles de `User`.
 
 L'héritage simple permet aussi d'hériter d'une classe qui hérite elle-même d'une autre classe.
 
 ```python
-class NoIdeaPersonne(ByePersonne): # Use car examples
-    def no_idea(self):
-        pass
+class SuperAdmin(Admin):
+    pass
 ```
 
-`NoIdeaPersonne` est alors la fille de `ByePersonne`, elle-même la fille de `Personne`. On dit alors que `Personne` est une ancêtre de `NoIdeaPersonne`.
+`SuperAdmin` est alors la fille de `Admin`, elle-même la fille de `User`. On dit alors que `User` est une ancêtre de `SuperAdmin`.
 
 On peut constater quels sont les parents d'une classe à l'aide de l'attribut `__bases__` des classes :
 
 ```python
->>> ByePersonne.__bases__
-(<class '__main__.Personne'>,)
->>> MajorityPersonne.__bases__
-(<class '__main__.Personne'>,)
->>> NoIdeaPersonne.__bases__
-(<class '__main__.ByePersonne'>,)
+>>> Admin.__bases__
+(<class '__main__.User'>,)
+>>> Guest.__bases__
+(<class '__main__.User'>,)
+>>> SuperAdmin.__bases__
+(<class '__main__.Admin'>,)
 ```
 
-Que vaudrait alors `Personne.__bases__`, sachant que la classe `Personne` est définie sans héritage ?
+Que vaudrait alors `User.__bases__`, sachant que la classe `User` est définie sans héritage ?
 
 ```python
->>> Personne.__bases__
+>>> User.__bases__
 (<class 'object'>,)
 ```
 
-On remarque que, sans que nous n'ayons rien demandé, `Personne` hérite de `object`.
+On remarque que, sans que nous n'ayons rien demandé, `User` hérite de `object`.
 En fait, `object` est un ancêtre de toute classe Python. Ainsi, quand aucune classe parente n'est définie, c'est `object` qui est choisi.
 
 ### Sous-typage
@@ -76,13 +73,13 @@ L'héritage a aussi du sens au niveau des types, en créant un nouveau type comp
 En Python, la fonction `isinstance` permet de tester si un objet est l'instance d'une certaine classe.
 
 ```python
->>> isinstance(p1, ByePersonne)
+>>> isinstance(root, Admin)
 True
->>> isinstance(p1, Personne)
+>>> isinstance(root, User)
 True
->>> isinstance(p1, MajorityPersonne)
+>>> isinstance(root, Guest)
 False
->>> isinstance(p1, object)
+>>> isinstance(root, object)
 True
 ```
 

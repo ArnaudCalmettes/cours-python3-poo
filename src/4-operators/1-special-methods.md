@@ -6,56 +6,62 @@ On appelle cette méthode une méthode spéciale, il y en a encore beaucoup d'au
 Vous vous êtes peut-être déjà demandé d'où provenait le résultat affiché sur la console quand on entre simplement le nom d'un objet.
 
 ```python
->>> class A:
-...     pass
-...
->>> A()
-<__main__.A object at 0x7fefd77fae10>
+>>> john = User(1, 'john', '12345')
+>>> john
+<__main__.User object at 0x7fefd77fae10>
 ```
 
 Il s'agit en fait de la représentation d'un objet, calculée à partir de sa méthode spéciale `__repr__`.
 
 ```python
->>> A().__repr__()
-'<__main__.A object at 0x7fefd77fae10>'
+>>> john.__repr__()
+'<__main__.User object at 0x7fefd77fae10>'
 ```
 
 À noter qu'une méthode spéciale n'est presque jamais directement appelée en Python, on lui préférera dans le cas présent la fonction *builtin* `êepr`.
 
 ```python
->>> repr(A())
-'<__main__.A object at 0x7fefd77fae10>'
+>>> repr(john)
+'<__main__.User object at 0x7fefd77fae10>'
 ```
 
 Il nous suffit alors de surcharger cette méthode `__repr__` pour définir notre propre représentation.
-Il est courant en Python que la représentation corresponde à l'expression à entrer sur l'invite de commande pour recréer l'objet en question.
 
 ```python
->>> class A:
-...     def __repr__(self):
-...         return 'A()'
-...
->>> A()
-A()
+class User:
+    ...
+
+    def __repr__(self):
+        return '<User: {}, {}>'.format(self.id, self.name)
+```
+
+```python
+>>> User(1, 'john', '12345')
+<User: 1, john>
 ```
 
 Une autre opération courante est la conversion de notre objet en chaîne de caractères afin d'être affiché via `print` par exemple.
 Par défaut, la conversion en chaîne correspond à la représentation de l'objet, mais elle peut être surchargée par la méthode `__str__`.
 
 ```python
->>> class A:
-...     def __repr__(self):
-...         return 'A()'
-...     def __str__(self):
-...         return 'Objet de type A'
-...
->>> a = A()
->>> a
-A()
->>> repr(a)
-'A()'
->>> str(a)
-'Objet de type A'
->>> print(a)
-Objet de type A
+class User:
+    ...
+
+    def __repr__(self):
+        return '<User: {}, {}>'.format(self.id, self.name)
+
+    def __str__(self):
+        return '{}-{}'.format(self.id, self.name)
+```
+
+```python
+>>> john = User(1, 'john', 12345)
+>>> john
+<User: 1, john>
+>>> repr(john)
+'<User: 1, john>'
+>>> str(john)
+'1-john'
+>>> print(john)
+1-john
 ```

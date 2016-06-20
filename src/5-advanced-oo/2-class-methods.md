@@ -9,39 +9,57 @@ int.mro()
 Les méthodes de classe constituent des opérations relatives à la classe mais à aucune instance.
 Elles recevront la classe courante en premier paramètre (nommé `cls`, correspondant au `self` des méthodes d'instance), et auront donc accès aux autres attributs et méthodes de classe.
 
-Étant donné une classe
+Reprenons notre classe `User`, à laquelle nous voudrions ajouter le stockage de tous les utilisateurs, et la génération automatique de l'`id`.
+Il nous suffirait d'une même méthode de classe pour stocker l'utilisateur dans un attribut de classe `users`, et qui li attribuerait un `id` en fonction du nombre d'utilisateurs déjà enregistrés.
 
 ```python
-class Point:
-    def __init__(x, y):
-        self.x, self.y = x, y
-```
-
-Nous pourrions vouloir deux méthodes de classe `xaxis` et `yaxis` pour créer respectivement des points sur l'axe des abscisses ou des ordonnées, de façon à avoir :
-
-```python
->>> a = Point.xaxis(5)
->>> a.x
-5
->>> a.y
-0
->>> b = Point.yaxis(6)
->>> b.x
-0
->>> b.y
-6
+>>> root = Admin('root', 'toor')
+>>> root
+<User: 1, root>
+>>> User('john', '12345')
+<User: 2, john>
+>>> guest = Guest('guest')
+<User: 3, guest>
 ```
 
 Les méthodes de classe se définissent comme les méthodes habituelles, à la différence près qu'elles sont précédées du décorateur `classmethod`.
 
 ```python
-class Point:
-    def __init__(x, y):
-        self.x, self.y = x, y
+import crypt
+
+class User:
+    users = []
+
+    def __init__(self, name, password):
+        self.name = name
+        self._salt = crypt.mksalt()
+        self._password = self._crypt_pwd(password)
+        self.register(self)
+
     @classmethod
-    def xaxis(cls, x):
-        return cls(x, 0)
-    @classmethod
-    def yaxis(cls, y):
-        return cls(0, y)
+    def register(cls, user):
+        cls.users.append(user)
+        user.id = len(cls.users)
+
+    def _crypt_pwd(self, password):
+        return crypt.crypt(password, self._salt)
+
+    def check_pwd(self, password):
+        return self._password == self._crypt_pwd(password)
+
+    def __repr__(self):
+        return '<User: {}, {}>'.format(self.id, self.name)
+
+class Guest(User):
+    def __init__(self, name):
+        super().__init__(name, '')
+
+    def check_pwd(self, password):
+        return True
+
+class Admin(User):
+    def manage(self):
+        print('I am an über administrator!')
 ```
+
+Vous pouvez constater le résultat en réessayant le code donné plus haut.

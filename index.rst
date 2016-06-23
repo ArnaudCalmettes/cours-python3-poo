@@ -35,4 +35,7 @@ La Programmation Orientée Objet en Python
    src/5-advanced-oo/5-abstract-classes.md
    src/5-advanced-oo/6-tp.md
    src/5-advanced-oo/x-conclusion.md
+   src/6-conception/0-introduction.md
+   src/6-conception/1-good-practices.md
+   src/6-conception/2-recipes.md
    src/x-conclusion.md

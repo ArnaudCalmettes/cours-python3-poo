@@ -119,7 +119,7 @@ Les *mixins* sont des classes dédiées à une fonctionnalité particulière, ut
 Par exemple, plusieurs types que l'on connaît sont appelés séquences (`str`, `list`, `tuple`). Ils ont en commun le fait d'implémenter l'opérateur `[]` et de gérer le *slicing*.
 On peut ainsi obtenir l'objet en ordre inverse à l'aide de `obj[::-1]`.
 
-Un *mixin* qui pourrait nous être utile serait une lasse avec une méthode `reverse` pour nous retourner l'objet inversé.
+Un *mixin* qui pourrait nous être utile serait une classe avec une méthode `reverse` pour nous retourner l'objet inversé.
 
 ```python
 class Reversable:

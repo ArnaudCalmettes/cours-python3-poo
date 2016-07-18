@@ -1,7 +1,4 @@
-## TP
-
-* Mise en pratique des méthodes de classes et des propriétés
-* ± classes abstraites
+## TP : Base de données
 
 Pour ce dernier TP, nous aborderons les méthodes de classe et les propriétés.
 

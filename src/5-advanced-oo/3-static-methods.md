@@ -1,4 +1,4 @@
-## Méthodes statiques
+## Le statique c'est fantastique
 
 Les méthodes statiques sont très proches des méthodes de classe, mais sont plus à considérer comme des fonctions au sein d'une classe.
 

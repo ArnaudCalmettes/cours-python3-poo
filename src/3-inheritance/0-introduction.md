@@ -1,5 +1,6 @@
-Héritage
-========
+# Extension et héritage
+
+Il n'est pas dans ce chapitre question de régler la succession de votre grand-tante par alliance, mais de nous intéresser à l'extension de classes.
 
 Imaginons que nous voulions définir une classe `Admin`, pour gérer des administrateurs, qui réutiliserait le même code que la classe `User`.
 Tout ce que nous savons faire actuellement c'est copier/coller le code de la classe `User` en changeant son nom pour `Admin`.

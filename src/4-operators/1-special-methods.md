@@ -1,4 +1,4 @@
-## Méthodes spéciales
+## Des méthodes un peu spéciales
 
 Nous avons vu précédemment la méthode `__init__`, permettant d'initialiser les attributs d'un objet.
 On appelle cette méthode une méthode spéciale, il y en a encore beaucoup d'autres en Python. Elles sont reconnaissables par leur nom débutant et finissant par deux *underscores*.

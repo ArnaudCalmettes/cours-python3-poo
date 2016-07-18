@@ -1,4 +1,4 @@
-## TP
+## TP : Fils de discussion
 
 Vous vous souvenez de la classe `Post` pour représenter un message ?
 Nous aimerions maintenant pouvoir instancier des fils de discussion (`Thread`) sur notre forum.

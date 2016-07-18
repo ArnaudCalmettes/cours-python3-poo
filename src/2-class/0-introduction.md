@@ -1,5 +1,4 @@
-Classes
-=======
+# Classes
 
 Une classe est en fait la définition d'un type. `int`, `str` ou encore `list` sont des exemples de classes. `User` en est une autre.
 

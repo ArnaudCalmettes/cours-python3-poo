@@ -1,4 +1,4 @@
-## Attributs de classes
+## Les attributs entrent en classe
 
 Nous avons déjà rencontré un attribut de classe, quand nous nous intéressions aux parents d'une classe.
 Souvenez-vous de `__bases__`, nous ne l'utilisions pas sur des instances mais sur notre classe directement.

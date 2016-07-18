@@ -1,4 +1,4 @@
-## Type
+## Il a une drôle de tête ce type-là
 
 Ainsi, tout objet est associé à un type. Un type définit la sémantique d'un objet.
 On sait par exemple que les objets de type `int` sont des nombres entiers, que l'on peut les additionner, les soustraire, etc.

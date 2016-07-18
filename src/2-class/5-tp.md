@@ -1,4 +1,4 @@
-## TP
+## TP : Forum, utilisateurs et messages
 
 Pour ce premier TP, nous allons nous intéresser aux classes d'un forum.
 Forts de notre type `User` pour représenter un utilisateur, nous souhaitons ajouter une classe `Post`, correspondant à un quelconque message.

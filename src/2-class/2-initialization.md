@@ -1,7 +1,7 @@
-## Initialisation
+## Argumentons pour construire
 
 Nous avons vu qu'instancier une classe était semblable à un appel de fonction.
-Dans ce cas, comment passer des paramètres à une classe, comme on le ferait pour une fonction ?
+Dans ce cas, comment passer des arguments à une classe, comme on le ferait pour une fonction ?
 
 Il faut pour cela comprendre les bases du mécanisme d'instanciation de Python.
 Quand on appelle une classe, un nouvel objet de ce type est construit en mémoire, puis initialisé. Cette initialisation permet d'assigner des valeurs à ses attributs.

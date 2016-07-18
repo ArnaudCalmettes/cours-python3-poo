@@ -1,4 +1,4 @@
-## TP
+## TP : Arithmétique simple
 
 Oublions temporairement nos utilisateurs et nos posts, et intéressons-nous à l'évaluation mathématique.
 

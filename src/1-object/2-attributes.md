@@ -1,4 +1,4 @@
-## Attributs
+## Montre-moi tes attributs
 
 Ensuite, nous avons dit qu'un objet était constitué d'attributs.
 Ces derniers représentent des valeurs propres à l'objet.

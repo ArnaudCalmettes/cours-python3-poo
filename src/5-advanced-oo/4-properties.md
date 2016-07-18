@@ -1,4 +1,4 @@
-## Propriétés
+## La dynamique des propriétés
 
 Les propriétés sont une manière en Python de « dynamiser » les attributs d'un objet.
 Ils permettent de générer des attributs à la volée à partir de méthodes de l'objet.

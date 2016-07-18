@@ -1,4 +1,4 @@
-## Structure d'un objet
+## Tu aimes les glaces, canard ?
 
 Un objet en Python est défini par sa structure (les attributs qu'ils contient et les méthodes qui lui sont applicables) plutôt que par son type.
 
@@ -17,4 +17,5 @@ f = FakeFile()
 print('foo', file=f)
 ```
 
-Python est entièrement construit autour de cette idée, appelée *duck-typing*.
+Python est entièrement construit autour de cette idée, appelée *duck-typing* :
+« Si je vois un animal qui vole comme un canard, cancane comme un canard, et nage comme un canard, alors j'appelle cet oiseau un canard » (James Whitcomb Riley)

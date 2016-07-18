@@ -1,4 +1,4 @@
-## Héritage simple
+## Hériter en toute simplicité
 
 L'héritage simple est le mécanisme permettant d'étendre une unique classe.
 Il consiste à créer une nouvelle classe (fille) qui bénéficiera des mêmes méthodes et attributs que sa classe mère.

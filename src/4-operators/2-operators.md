@@ -1,4 +1,4 @@
-## Opérateurs
+## Doux opérateurs
 
 Les opérateurs sont un autre type de méthodes spéciales que nous découvrirons dans cette section.
 

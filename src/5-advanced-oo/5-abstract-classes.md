@@ -1,4 +1,4 @@
-## Classes abstraites
+## L'art des classes abstraites
 
 La notion de classes abstraites est utilisée lors de l'héritage pour forcer les classes filles à implémenter certaines méthodes (dites méthodes abstraites) et donc respecter une interface.
 

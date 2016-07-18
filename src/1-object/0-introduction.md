@@ -1,5 +1,4 @@
-Objet
-=====
+# Objet et caractéristiques
 
 Tout d'abord, qu'est-ce qu'un objet ?
 En introduction, nous avons dit qu'un objet avait des propriétés

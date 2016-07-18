@@ -1,4 +1,4 @@
-## Méthodes de classes
+## La méthode pour avoir la classe
 
 Comme pour les attributs, des méthodes peuvent être définies au niveau de la classe. C'est par exemple le cas de la méthode `mro`.
 

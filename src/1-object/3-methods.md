@@ -1,4 +1,4 @@
-## Méthodes
+## Discours de la méthode
 
 Enfin, les méthodes sont les opérations applicables sur les objets.
 Ce sont en fait des fonctions paramétrées avec un objet et qui peuvent recevoir d'autres paramètres.

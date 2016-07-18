@@ -1,4 +1,4 @@
-## Encapsulation
+## Comment veux-tu que je t'encapsule ?
 
 Au sein d'un objet, les attributs peuvent avoir des sémantiques différentes.
 Certains attributs vont représenter des propriétés de l'objet et faire partie de son interface (tels que le prénom et le nom de nos objets `Person`). Ils pourront alors être lus et modifiés depuis l'extérieur de l'objet, on parle dans ce cas d'attributs publics.

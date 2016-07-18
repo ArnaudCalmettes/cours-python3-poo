@@ -1,6 +1,7 @@
-## Héritage multiple
+## Une classe avec deux mamans
 
-L'héritage simple nous permettait d'étendre le comportement d'une classe, l'héritage multiple va permettre de le faire pour plusieurs classes à la fois.
+Avec l'héritage simple, nous pouvions étendre le comportement d'une classe.
+L'héritage multiple va nous permettre de le faire pour plusieurs classes à la fois.
 
 Il nous suffit de préciser plusieurs classes entre parenthèses lors de la création de notre classe fille.
 

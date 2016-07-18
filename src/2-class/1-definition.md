@@ -1,4 +1,4 @@
-## Définition
+## La classe à Dallas
 
 On définit une classe à l'aide du mot-clef `class` survolé plus tôt :
 

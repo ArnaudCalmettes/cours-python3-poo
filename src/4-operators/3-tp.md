@@ -103,7 +103,7 @@ class UnOp(Op):
     def __repr__(self):
         if self.symbol is None:
             return super().__repr__()
-        return '{}{}'.format(self.symbol, repr(self.args[0]))
+        return '{}{!r}'.format(self.symbol, self.args[0])
 
 class BinOp(Op):
     def __init__(self, op, expr1, expr2, symbol=None):
@@ -113,7 +113,7 @@ class BinOp(Op):
     def __repr__(self):
         if self.symbol is None:
             return super().__repr__()
-        return '({} {} {})'.format(repr(self.args[0]), self.symbol, repr(self.args[1]))
+        return '({!r} {} {!r})'.format(self.args[0], self.symbol, self.args[1])
 
 if __name__ == '__main__':
     x = Var('x')

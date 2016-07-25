@@ -10,7 +10,7 @@ Les méthodes de classe constituent des opérations relatives à la classe mais 
 Elles recevront la classe courante en premier paramètre (nommé `cls`, correspondant au `self` des méthodes d'instance), et auront donc accès aux autres attributs et méthodes de classe.
 
 Reprenons notre classe `User`, à laquelle nous voudrions ajouter le stockage de tous les utilisateurs, et la génération automatique de l'`id`.
-Il nous suffirait d'une même méthode de classe pour stocker l'utilisateur dans un attribut de classe `users`, et qui li attribuerait un `id` en fonction du nombre d'utilisateurs déjà enregistrés.
+Il nous suffirait d'une même méthode de classe pour stocker l'utilisateur dans un attribut de classe `users`, et qui lui attribuerait un `id` en fonction du nombre d'utilisateurs déjà enregistrés.
 
 ```python
 >>> root = Admin('root', 'toor')

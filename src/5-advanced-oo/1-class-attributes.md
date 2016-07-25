@@ -23,7 +23,7 @@ class User:
 
 On notera à l'inverse qu'il est aussi possible de définir une méthode de la classe depuis l'extérieur :
 
-```
+```python
 >>> def User_repr(self):
 ...     return '<User>'
 ...

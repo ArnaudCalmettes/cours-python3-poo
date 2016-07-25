@@ -1,5 +1,4 @@
-Conclusion
-==========
+# Conclusion
 
 Ce cours touche maintenant à sa fin, mais votre apprentissage du Python continue.
 Avec la programmation objet, un nouveau monde s'offre à vous.

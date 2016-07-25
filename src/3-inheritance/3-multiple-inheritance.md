@@ -18,14 +18,14 @@ class C(A, B):
     pass
 ```
 
-Notre classe `C` a donc deux mères : `A` et `B`. Cela veut aussi dire que les objets de type `C` possèdent à la fois les méthodes `foo` et `bar.
+Notre classe `C` a donc deux mères : `A` et `B`. Cela veut aussi dire que les objets de type `C` possèdent à la fois les méthodes `foo` et `bar`.
 
 ```python
 >>> c = C()
 >>> c.foo()
 '!'
 >>> c.bar()
-'!'
+'?'
 ```
 
 ### Ordre d'héritage

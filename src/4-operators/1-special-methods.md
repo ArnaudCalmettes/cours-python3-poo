@@ -18,7 +18,7 @@ Il s'agit en fait de la représentation d'un objet, calculée à partir de sa m�
 '<__main__.User object at 0x7fefd77fae10>'
 ```
 
-À noter qu'une méthode spéciale n'est presque jamais directement appelée en Python, on lui préférera dans le cas présent la fonction *builtin* `êepr`.
+À noter qu'une méthode spéciale n'est presque jamais directement appelée en Python, on lui préférera dans le cas présent la fonction *builtin* `repr`.
 
 ```python
 >>> repr(john)

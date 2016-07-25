@@ -1,6 +1,6 @@
 ## Tu aimes les glaces, canard ?
 
-Un objet en Python est défini par sa structure (les attributs qu'ils contient et les méthodes qui lui sont applicables) plutôt que par son type.
+Un objet en Python est défini par sa structure (les attributs qu'il contient et les méthodes qui lui sont applicables) plutôt que par son type.
 
 Ainsi, pour faire simple, un fichier sera un objet possédant des méthodes `read`, `write` et `close`. Tout objet respectant cette définition sera considéré par Python comme un fichier.
 

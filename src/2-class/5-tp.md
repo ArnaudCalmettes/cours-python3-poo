@@ -16,7 +16,7 @@ Un `Post` possèdera une méthode `format` pour retourner le message formaté, c
 </div>
 ```
 
-De plus, nous ajouterons une méthode `post` à notre classe `User`, receva t un corps de message en paramètre et retournant un nouvel objet `Post`.
+De plus, nous ajouterons une méthode `post` à notre classe `User`, recevant un corps de message en paramètre et retournant un nouvel objet `Post`.
 
 ```python
 import crypt

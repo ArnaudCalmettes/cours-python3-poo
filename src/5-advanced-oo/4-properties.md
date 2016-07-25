@@ -68,7 +68,7 @@ class UserPicture(ProfilePicture, User):
 'toto.png'
 ```
 
-Enfin, on peut aussi coder la suppression de l'attribut à l'aide de `@long_name.deleter`, ce qui revient à réaffecter `None` à l'attribut `_picture`.
+Enfin, on peut aussi coder la suppression de l'attribut à l'aide de `@picture.deleter`, ce qui revient à réaffecter `None` à l'attribut `_picture`.
 
 ```python
 class ProfilePicture:

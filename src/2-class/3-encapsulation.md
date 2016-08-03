@@ -1,10 +1,10 @@
 ## Comment veux-tu que je t'encapsule ?
 
 Au sein d'un objet, les attributs peuvent avoir des sémantiques différentes.
-Certains attributs vont représenter des propriétés de l'objet et faire partie de son interface (tels que le prénom et le nom de nos objets `Person`). Ils pourront alors être lus et modifiés depuis l'extérieur de l'objet, on parle dans ce cas d'attributs publics.
+Certains attributs vont représenter des propriétés de l'objet et faire partie de son interface (tels que le prénom et le nom de nos objets `User`). Ils pourront alors être lus et modifiés depuis l'extérieur de l'objet, on parle dans ce cas d'attributs publics.
 
 D'autres vont contenir des données internes à l'objet, n'ayant pas vocation à être accessibles depuis l'extérieur, les attributs privés.
-Par exemple, le mot de passe de notre classe `User` ne devrait jamais être utilisé en dehors de l'objet. Nous en profiterons aussi pour sécuriser le stockage de nos mots de passe en ajoutant une méthode servant à le hasher.
+Par exemple, le mot de passe de notre classe `User` ne devrait jamais être utilisé en dehors de l'objet. Nous en profiterons aussi pour sécuriser le stockage de nos mots de passe en ajoutant une méthode servant à le *hasher*^[Le *hashage* d'un mot de passe correspond à une opération non-réversible qui permet de calculer un condensat (*hash*) du mot de passe. Ce condensat peut-être utilisé pour vérifier la validité d'un mot de passe, mais ne permet pas de retrouver le mot de passe d'origine], à l'aide du module `crypt`.
 
 De la même manière que pour les attributs, certaines méthodes vont avoir une portée publique et d'autres privée (on peut imaginer une méthode interne de la classe pour générer notre identifiant unique).
 On nomme encapsulation cette notion de visibilité des attributs et méthodes d'un objet.

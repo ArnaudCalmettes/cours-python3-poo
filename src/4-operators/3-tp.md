@@ -1,6 +1,6 @@
 ## TP : Arithmétique simple
 
-Oublions temporairement nos utilisateurs et nos posts, et intéressons-nous à l'évaluation mathématique.
+Oublions temporairement nos utilisateurs et notre forum, et intéressons-nous à l'évaluation mathématique.
 
 Imaginons que nous voulions représenter une expression mathématique, qui pourrait contenir des termes variables (par exemple, `2 * (-x + 1)`).
 
@@ -16,7 +16,7 @@ L'expression précédente s'évaluerait par exemple à :
 BinOp(operator.mul, 2, BinOp(operator.add, UnOp(operator.neg, Var('x')), 1))
 ```
 
-Nous ajouterons à notre type `Expr` une méthode `compute(**values)`, qui permettra de calculer l'expression suivant une valeur donnée, de façon à ce que `Var('x').compute(x=5, y=2)` retourne `5`.
+Nous ajouterons à notre type `Expr` une méthode `compute(**values)`, qui permettra de calculer l'expression suivant une valeur donnée, de façon à ce que `Var('x').compute(x=5)` retourne `5`.
 
 Enfin, nous pourrons ajouter une méthode `__repr__` pour obtenir une représentation lisible de notre expression.
 

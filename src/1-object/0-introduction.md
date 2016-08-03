@@ -24,3 +24,5 @@ Pour vous éclairer, prenons le code suivant :
 >>> l
 [5]
 ```
+
+Toute valeur en Python est donc un objet.

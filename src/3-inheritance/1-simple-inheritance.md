@@ -13,6 +13,8 @@ class Admin(User):
         print('I am an über administrator!')
 ```
 
+En plus des méthodes de la classe `User` (`__init__`, `_crypt_pwd` et `check_pwd`), `Admin` possède aussi une méthode `manage`.
+
 ```python
 >>> root = Admin(1, 'root', 'toor')
 >>> root.check_password('toor')
@@ -44,7 +46,7 @@ class SuperAdmin(Admin):
 
 `SuperAdmin` est alors la fille de `Admin`, elle-même la fille de `User`. On dit alors que `User` est une ancêtre de `SuperAdmin`.
 
-On peut constater quels sont les parents d'une classe à l'aide de l'attribut `__bases__` des classes :
+On peut constater quels sont les parents d'une classe à l'aide de l'attribut spécial `__bases__` des classes :
 
 ```python
 >>> Admin.__bases__
@@ -63,7 +65,7 @@ Que vaudrait alors `User.__bases__`, sachant que la classe `User` est définie s
 ```
 
 On remarque que, sans que nous n'ayons rien demandé, `User` hérite de `object`.
-En fait, `object` est un ancêtre de toute classe Python. Ainsi, quand aucune classe parente n'est définie, c'est `object` qui est choisi.
+En fait, `object` est l'ancêtre de toute classe Python. Ainsi, quand aucune classe parente n'est définie, c'est `object` qui est choisi.
 
 ### Sous-typage
 

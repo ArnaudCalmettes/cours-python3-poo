@@ -38,7 +38,7 @@ ValueError: item not found
 
 Nous ajouterons ensuite une classe `Model`, qui se chargera de stocker dans la base toutes les instances créées.
 `Model` comprendra une méthode de classe `get(**kwargs)` chargée de réaliser une requête `select` sur la base de données et de retourner l'objet correspondant.
-Les objets de type `Model` disposeront aussi d'une propriété `id`, retournant l'identifiant unique de l'objet, dont l'implémentation est libre.
+Les objets de type `Model` disposeront aussi d'une propriété `id`, retournant un identifiant unique de l'objet.
 
 On pourra alors faire hériter nos classes `User` et `Post` de `Model`, afin que les utilisateurs et messages soient stockés en base de données.
 Dans un second temps, on pourra faire de `Model` une classe abstraite, par exemple en rendant abstraite la méthode `__init__`.

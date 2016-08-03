@@ -60,57 +60,104 @@ Cet ordre dans lequel les classes parentes sont explorées pour la recherche des
 On peut le connaître à l'aide de la méthode `mro` des classes.
 
 ```python
+>>> A.mro()
+[<class '__main__.A'>, <class 'object'>]
+>>> B.mro()
+[<class '__main__.B'>, <class 'object'>]
 >>> C.mro()
 [<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
 >>> D.mro()
 [<class '__main__.D'>, <class '__main__.B'>, <class '__main__.A'>, <class 'object'>]
 ```
 
-C'est aussi ce *MRO* qui est utilisé par `super` pour trouver la classe suivante : étant donnée la classe en premier paramètre (ou la classe courante si appelée sans paramètres), il se charge de localiser la classe juste à sa droite dans le *MRO*.
+C'est aussi ce *MRO* qui est utilisé par `super` pour trouver à quelle classe faire appel.
+`super` se charge d'explorer le *MRO* de la classe de l'instance qui lui est donnée en second paramètre, et de retourner un *proxy* sur la classe juste à droite de celle donnée en premier paramètre.
+
+Ainsi, avec `c` une instance de `C`, `super(C, c)` retournera un objet se comportant comme une instance de `A`, `super(A, c)` comme une instance de `B`, et `super(B, c)` comme une instance de `object`.
 
 ```python
 >>> c = C()
+>>> c.foo() # C.foo == A.foo
+'!'
 >>> super(C, c).foo() # A.foo
 '!'
 >>> super(A, c).foo() # B.foo
 '?'
+>>> super(B, c).foo() # object.foo -> méthode introuvable
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'super' object has no attribute 'foo'
 ```
 
-Les classes parentes n'ont ainsi pas besoin de se connaître les unes les autres pour se référencer.
+Les classes parentes n'ont alors pas besoin de se connaître les unes les autres pour se référencer.
 
 ```python
 class A:
     def __init__(self):
-        print("Initialisation d'un objet de type A")
+        print("Début initialisation d'un objet de type A")
         super().__init__()
+        print("Fin initialisation d'un objet de type A")
 
 class B:
     def __init__(self):
-        print("Initialisation d'un objet de type B")
+        print("Début initialisation d'un objet de type B")
         super().__init__()
+        print("Fin initialisation d'un objet de type B")
 
 class C(A, B):
     def __init__(self):
-        print("Initialisation d'un objet de type C")
+        print("Début initialisation d'un objet de type C")
         super().__init__()
+        print("Fin initialisation d'un objet de type C")
 
 class D(B, A):
     def __init__(self):
-        print("Initialisation d'un objet de type D")
+        print("Début initialisation d'un objet de type D")
         super().__init__()
+        print("Fin initialisation d'un objet de type D")
 ```
 
 ```python
 >>> C()
-Initialisation d'un objet de type C
-Initialisation d'un objet de type A
-Initialisation d'un objet de type B
-<__main__.C object at 0x7fe7e8fd3198>
+Début initialisation d'un objet de type C
+Début initialisation d'un objet de type A
+Début initialisation d'un objet de type B
+Fin initialisation d'un objet de type B
+Fin initialisation d'un objet de type A
+Fin initialisation d'un objet de type C
+<__main__.C object at 0x7f0ccaa970b8>
 >>> D()
-Initialisation d'un objet de type D
-Initialisation d'un objet de type B
-Initialisation d'un objet de type A
-<__main__.D object at 0x7fe7e8fd32b0>
+Début initialisation d'un objet de type D
+Début initialisation d'un objet de type B
+Début initialisation d'un objet de type A
+Fin initialisation d'un objet de type A
+Fin initialisation d'un objet de type B
+Fin initialisation d'un objet de type D
+<__main__.D object at 0x7f0ccaa971d0>
+```
+
+La méthode `__init__` des classes parentes n'est pas appelée automatiquement, et l'appel doit donc être réalisé explicitement.
+
+C'est ainsi le `super().__init__()` présent dans la classe `C` qui appelle l'initialiseur de la classe `A`, qui appelle lui-même celui de la classe `B`.
+Inversement, pour la classe `D`, `super().__init__()` appelle l'initialiseur de `B` qui appelle celui de `A`.
+
+On notera que les exemple donnés n'utilisent jamais plus de deux classes mères, mais il est possible d'en avoir autant que vous le souhaitez.
+
+```python
+class A:
+    pass
+
+class B:
+    pass
+
+class C:
+    pass
+
+class D:
+    pass
+
+class E(A, B, C, D):
+    pass
 ```
 
 ### Mixins

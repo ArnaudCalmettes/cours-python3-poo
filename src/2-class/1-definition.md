@@ -35,7 +35,7 @@ class User:
         return self.password == password
 ```
 
-Notre classe `User` possède maintenant une méthode `check_pwd` applicable sur tous ses objets.
+Notre nouvelle classe `User` possède maintenant une méthode `check_pwd` applicable sur tous ses objets.
 
 ```python
 >>> john = User()

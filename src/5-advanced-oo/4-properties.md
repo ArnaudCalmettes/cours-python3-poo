@@ -35,7 +35,7 @@ Traceback (most recent call last):
 AttributeError: can't set attribute
 ```
 
-Pour le rendre modifiable, il faut ajouter à notre classe la méthode permettant de gérer la modification.
+Pour le rendre modifiable, il faut ajouter à notre classe la méthode permettant de gérer la modification, à l'aide du décorateur `@picture.setter` (le décorateur `setter` de notre propriété `picture`, donc).
 
 On utilisera ici un attribut `_picture`, qui pourra contenir l'adresse de l'image si elle a été définie, et `None` le cas échéant.
 

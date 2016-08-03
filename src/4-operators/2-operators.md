@@ -90,6 +90,7 @@ Par défaut, les méthodes `__add__`/`__radd__` sont appelées, mais définir `_
 Voici pour les opérateurs binaires, voyons maintenant les opérateurs unaires, qui ne prennent donc pas d'autre paramètre que `self`.
 
 * **Opposé** (`-a`) — `__neg__`
+* **Positif** (`+a`) - `__pos__`
 * **Valeur abosule** (`abs(a)`) — `__abs__`
 
 ### Opérateurs de comparaison

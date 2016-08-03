@@ -9,6 +9,9 @@ c'est-à-dire une façon de concevoir un programme informatique, reposant sur l'
 
 En définitive, un objet est une donnée. Une donnée constituée de diverses propriétés, et pouvant être manipulée par différentes opérations.
 
+La programmation orientée objet est le paradigme qui nous permet de définir nos propres types d'objets, avec leurs propriétés et opérations.
+Ce paradigme vient avec de nombreux concepts qui seront explicités le long de ce cours.
+
 À travers ce tutoriel, nous allons nous intéresser à cette façon de penser et de programmer avec le langage Python.
 
 Il vous est conseillé de maîtriser les bases de ce dernier (manipulation de valeurs,

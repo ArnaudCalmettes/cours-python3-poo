@@ -2,9 +2,9 @@
 
 Les méthodes statiques sont très proches des méthodes de classe, mais sont plus à considérer comme des fonctions au sein d'une classe.
 
-Contrairement aux méthodes de classe, elles ne recevront pas le paramètre `cls`, et n'auront donc pas accès aux attributs/méthodes de classe/statiques.
+Contrairement aux méthodes de classe, elles ne recevront pas le paramètre `cls`, et n'auront donc pas accès aux attributs de classe, méthodes de classe ou méthodes statiques.
 
-Les méthodes statiques sont plutôt dédiées à des comportements annexes en rapport avec la classe, par exemple on pourrait remplacer notre attribut `id` pr un *uuid* aléatoire, dont la génération ne dépendrait de rien d'autre dans la classe.
+Les méthodes statiques sont plutôt dédiées à des comportements annexes en rapport avec la classe, par exemple on pourrait remplacer notre attribut `id` par un *uuid* aléatoire, dont la génération ne dépendrait de rien d'autre dans la classe.
 
 Elles se définissent avec le décorateur `staticmethod`.
 

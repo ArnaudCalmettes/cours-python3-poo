@@ -25,7 +25,9 @@ En l'occurrence il ne s'agit que de 2 lignes de code, mais lorsque nous voudrons
 Heureusement, Python nous offre un moyen de remédier à ce mécanisme, super !
 Oui, `super`, littéralement, une fonction un peu spéciale en Python, qui nous permet d'utiliser la classe parente (*superclass*).
 
-`super` est une fonction qui prend initialement en paramètre une classe et une instance de cette classe. Elle retourne un objet *proxy*^[Un *proxy* est un intermédiaire transparent entre deux entités] qui s'utilise comme une instance de la classe parente.
+`super` est une fonction qui prend initialement en paramètre une classe et une instance de cette classe. Elle retourne un objet *proxy*[^proxy] qui s'utilise comme une instance de la classe parente.
+
+[^proxy]: Un *proxy* est un intermédiaire transparent entre deux entités.
 
 ```python
 >>> guest = Guest(3, 'Guest')

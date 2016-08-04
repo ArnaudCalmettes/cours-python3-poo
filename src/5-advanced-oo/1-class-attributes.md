@@ -62,7 +62,9 @@ Attention donc, quand l'attribut est redéfini dans l'objet, il sera trouvé en 
 'admin'
 ```
 
-Attention aussi, quand l'attribut de classe est un objet mutable^[Un objet mutable est un objet que l'on peut modifier (liste, dictionnaire) par opposition à un objet immutable (nombre, chaîne de caractères, *tuple*)], il peut être modifié par n'importe quelle instance de la classe.
+Attention aussi, quand l'attribut de classe est un objet mutable[^mutable], il peut être modifié par n'importe quelle instance de la classe.
+
+[^mutable]: Un objet mutable est un objet que l'on peut modifier (liste, dictionnaire) par opposition à un objet immutable (nombre, chaîne de caractères, *tuple*).
 
 ```python
 >>> class User:

@@ -1,7 +1,7 @@
-## La surcharge de méthodes, c'est super !
+## La redéfinition de méthodes, c'est super !
 
 Nous savons hériter d'une classe pour y insérer de nouvelles méthodes, mais nous ne savons pas étendre les méthodes déjà présentes dans la classe mère.
-La surcharge est un concept qui permet de redéfinir une méthode du parent.
+La redéfinition est un concept qui permet de remplacer une méthode du parent.
 
 Nous voudrions que la classe `Guest` ne possède plus aucun mot de passe. Celle-ci devra modifier la méthode `check_pwd` pour accepter tout mot de passe, et simplifier la méthode `__init__`.
 

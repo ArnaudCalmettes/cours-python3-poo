@@ -25,7 +25,7 @@ Traceback (most recent call last):
 TypeError: Can't instantiate abstract class MyABC with abstract methods foo
 ```
 
-Il en est de même pour une classe héritant de `MyABC` sans surcharger la méthode.
+Il en est de même pour une classe héritant de `MyABC` sans redéfinir la méthode.
 
 ```python
 >>> class A(MyABC):
@@ -37,7 +37,7 @@ Traceback (most recent call last):
 TypeError: Can't instantiate abstract class A with abstract methods foo
 ```
 
-Aucun problème par contre avec une autre classe qui surcharge bien la méthode.
+Aucun problème par contre avec une autre classe qui redéfinit bien la méthode.
 
 ```python
 >>> class B(MyABC):

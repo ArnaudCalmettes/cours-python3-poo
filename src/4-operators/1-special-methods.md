@@ -25,7 +25,7 @@ Il s'agit en fait de la représentation d'un objet, calculée à partir de sa m�
 '<__main__.User object at 0x7fefd77fae10>'
 ```
 
-Il nous suffit alors de surcharger cette méthode `__repr__` pour définir notre propre représentation.
+Il nous suffit alors de redéfinir cette méthode `__repr__` pour bénéficier de notre propre représentation.
 
 ```python
 class User:

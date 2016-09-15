@@ -47,3 +47,7 @@ class Guest(User):
     def check_pwd(self, password):
         return True
 ```
+
+On notera tout de même que contrairement aux versions précédentes, l'initialisateur de `User` est appelé en plus de celui de `Guest`, et donc qu'un sel et un *hash* du mot de passe sont générés alors qu'ils ne serviront pas.
+
+Ça n'est pas très grave dans le cas présent, mais pensez-y dans vos développements futurs, afin de ne pas exécuter d'opérations coûteuses inutilement.

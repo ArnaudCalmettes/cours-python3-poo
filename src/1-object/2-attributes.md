@@ -46,3 +46,10 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'User' object has no attribute 'password'
 ```
+
+[[attention]]
+| Il est généralement déconseillé de nommer une valeur de la même manière qu'une fonction *built-in*.
+| On évitera par exemple d'avoir une variable `id`, `type` ou `list`.
+|
+| Dans le cas d'un attribut, cela n'est pas gênant car ne fait pas partie du même espace de noms.
+| En effet, `john.id` n'entre pas en conflit avec `id`.

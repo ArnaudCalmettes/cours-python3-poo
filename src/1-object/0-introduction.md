@@ -16,12 +16,12 @@ Concrètement, un objet est constitué de 3 caractéristiques :
 Pour vous éclairer, prenons le code suivant :
 
 ```python
->>> i = 5 # On instancie une variable `i` de type `int`
->>> i.numerator # `numerator` est un attribut de `i`
+>>> number = 5 # On instancie une variable `number` de type `int`
+>>> number.numerator # `numerator` est un attribut de `number`
 5
->>> l = [] # Variable `l` de type `list`
->>> l.append(i) # `append` est une méthode de `l`
->>> l
+>>> values = [] # Variable `values` de type `list`
+>>> values.append(number) # `append` est une méthode de `values`
+>>> values
 [5]
 ```
 

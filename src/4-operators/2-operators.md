@@ -29,7 +29,7 @@ L'addition, par exemple, est définie par la méthode `__add__`.
 ```
 
 Assez simple, n'est-il pas ? Mais nous n'avons pas tout à fait terminé.
-Si la méthode est appelée sur l'oéprande de gauche, que se passe-t-il quand notre objet se trouve à droite ?
+Si la méthode est appelée sur l'opérande de gauche, que se passe-t-il quand notre objet se trouve à droite ?
 
 ```python
 >>> 5 + A()

@@ -32,7 +32,7 @@ Mon id est le 1.
 Mon mot de passe est 12345.
 ```
 
-Nous avons instancié un objet nommé `john`, de type `User`, auquel nous avons attribué deux attributs. Puis nous avons affiché les valeurs de ces attributs.
+Nous avons instancié un objet nommé `john`, de type `User`, auquel nous avons attribué trois attributs. Puis nous avons affiché les valeurs de ces attributs.
 
 Notez que l'on peut redéfinir la valeur d'un attribut, et qu'un attribut peut aussi être supprimé à l'aide de l'opérateur `del`.
 

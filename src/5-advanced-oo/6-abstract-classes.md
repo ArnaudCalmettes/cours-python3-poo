@@ -11,7 +11,7 @@ Une classe abstraite doit donc hériter d'`ABC`, et utiliser le décorateur cit�
 import abc
 
 class MyABC(abc.ABC):
-    @abstractmethod
+    @abc.abstractmethod
     def foo(self):
         pass
 ```
